@@ -13,7 +13,7 @@ router = APIRouter()
 
 @router.post("/api/v1/memo11/login")
 async def register(user: Login):
-    if user.api_key == os.getenv("url"):
+    if user.api_key == os.getenv("api_key"):
         if data := await db.get("username", user.username, user.password):
             return JSONResponse(
                 content=[

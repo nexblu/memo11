@@ -13,7 +13,7 @@ router = APIRouter()
 
 @router.post("/api/v1/memo11/register")
 async def register(user: Register):
-    if user.api_key == os.getenv("url"):
+    if user.api_key == os.getenv("api_key"):
         try:
             await db.insert(user.username, user.password)
         except:
