@@ -6,6 +6,7 @@ from models import Email
 import smtplib
 from email.message import EmailMessage
 import ssl
+from static import Misc
 
 
 def send_email(email):
@@ -33,7 +34,7 @@ router = APIRouter()
 @router.post("/api/v1/memo11/send_email")
 async def send_email(email: Email):
     if email.api_key == os.getenv("api_key"):
-        send_email(email.email)
+        await Misc.send_email(email.email)
         return JSONResponse(
             content=[
                 {
