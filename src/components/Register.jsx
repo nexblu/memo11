@@ -1,11 +1,15 @@
 import { Form } from 'react-bootstrap'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+    const [email, emailUpdate] = useState('');
     const [username, usernameUpdate] = useState('');
     const [password, passwordUpdate] = useState('');
 
-    const proceedLogin = (e) => {
+    const navigate = useNavigate();
+
+    const proceedRegister = (e) => {
         e.preventDefault();
         console.log(username, password);
         const apiUrl = 'http://127.0.0.1:8000/api/v1/memo11/login';
@@ -28,32 +32,34 @@ const Register = () => {
             .then(data => {
                 console.log('Response:', data);
                 if (data[0]['code11']['status_code'] === 404) {
-                    const apiUrl = 'http://127.0.0.1:8000/api/v1/memo11/register';
-
-                    const requestBody = {
+                    const url = 'http://127.0.0.1:8000/api/v1/memo11/register';
+                    const data = {
                         username: username,
+                        email: email,
                         password: password,
                         api_key: 'nexblu-code11'
                     };
 
-                    fetch(apiUrl, {
+                    const headers = {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    };
+
+                    const requestOptions = {
                         method: 'POST',
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(requestBody),
-                    })
+                        headers: new Headers(headers),
+                        body: JSON.stringify(data)
+                    };
+
+                    fetch(url, requestOptions)
                         .then(response => response.json())
                         .then(data => {
-                            console.log('Response:', data);
-                            if (data[0]['code11']['status_code'] === 200) {
-                                alert('berhasil regis')
-                            }
+                            console.log('Registration successful:', data);
+                            navigate('/')
+                            alert(data[0]['code11']['status'])
                         })
                         .catch(error => {
-                            console.error('Error:', error);
-                            // Handle error di sini
+                            console.error('Error during registration:', error);
                         });
                 }
             })
@@ -65,12 +71,15 @@ const Register = () => {
 
     return (
         <>
-            <Form onSubmit={proceedLogin}>
+            <Form onSubmit={proceedRegister}>
                 <div className="mb-3 me-5 ms-5">
-                    <Form.Control type="text" placeholder="Email Or Phone Number" value={username} onChange={e => usernameUpdate(e.target.value)}/>
+                    <Form.Control type="text" placeholder="Email" value={email} onChange={e => emailUpdate(e.target.value)} />
                 </div>
                 <div className="mb-3 me-5 ms-5">
-                    <Form.Control type="password" placeholder="Password" value={password} onChange={e => passwordUpdate(e.target.value)}/>
+                    <Form.Control type="text" placeholder="Username" value={username} onChange={e => usernameUpdate(e.target.value)} />
+                </div>
+                <div className="mb-3 me-5 ms-5">
+                    <Form.Control type="password" placeholder="Password" value={password} onChange={e => passwordUpdate(e.target.value)} />
                 </div>
                 <div className="mb-3 me-5 ms-5">
                     <button type="submit" class="btn btn-warning"><h3 className='text-light fw-bold'>Register</h3></button>

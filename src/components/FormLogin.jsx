@@ -14,8 +14,8 @@ const FormLogin = () => {
         const apiUrl = 'http://127.0.0.1:8000/api/v1/memo11/login';
 
         const requestBody = {
-            username: 'nexblu',
-            password: '089508453973',
+            username: username,
+            password: password,
             api_key: 'nexblu-code11'
         };
 
@@ -31,6 +31,7 @@ const FormLogin = () => {
             .then(data => {
                 console.log('Response:', data);
                 if (data[0]['code11']['status_code'] === 200) {
+                    console.log('masuk')
                     navigate('/note-app')
                 }
             })
