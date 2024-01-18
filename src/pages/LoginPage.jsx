@@ -1,6 +1,6 @@
 import HomeLogin from "../components/HomeLogin";
 
-const Home = () => {
+const LoginPage = () => {
     return (
         <>
             <HomeLogin/>
@@ -8,4 +8,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default LoginPage;
