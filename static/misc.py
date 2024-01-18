@@ -7,7 +7,7 @@ import requests
 
 class Misc:
     @staticmethod
-    def send_email(email: str):
+    async def send_email(email: str):
         email_address = "ditttt.tiktok@gmail.com"
         email_password = "orfd xfvf urcj arsb"
         em = EmailMessage()
