@@ -98,3 +98,97 @@ async def register(api_key: str, username: str):
             ],
             status_code=200,
         )
+
+
+@router.get("/api/v1/memo11/password_validate/{api_key}/{password}")
+async def register(api_key: str, password: str):
+    if api_key == os.getenv("api_key"):
+        if len(password) < 8:
+            return JSONResponse(
+                content=[
+                    {
+                        "code11": {
+                            "status": [
+                                "Password terlalu pendek, minimal 8 karakter.",
+                                False,
+                            ],
+                            "status_code": 200,
+                        }
+                    }
+                ],
+                status_code=200,
+            )
+        if not any(c.isupper() for c in password):
+            return JSONResponse(
+                content=[
+                    {
+                        "code11": {
+                            "status": [
+                                "Password harus mengandung setidaknya satu huruf besar.",
+                                False,
+                            ],
+                            "status_code": 200,
+                        }
+                    }
+                ],
+                status_code=200,
+            )
+        if not any(c.islower() for c in password):
+            return JSONResponse(
+                content=[
+                    {
+                        "code11": {
+                            "status": [
+                                "Password harus mengandung setidaknya satu huruf kecil.",
+                                False,
+                            ],
+                            "status_code": 200,
+                        }
+                    }
+                ],
+                status_code=200,
+            )
+        if not any(c.isdigit() for c in password):
+            return JSONResponse(
+                content=[
+                    {
+                        "code11": {
+                            "status": [
+                                "Password harus mengandung setidaknya satu angka.",
+                                False,
+                            ],
+                            "status_code": 200,
+                        }
+                    }
+                ],
+                status_code=200,
+            )
+        if not re.search('[!@#$%^&*(),.?":{}|<>]', password):
+            return JSONResponse(
+                content=[
+                    {
+                        "code11": {
+                            "status": [
+                                "Password harus mengandung setidaknya satu karakter khusus.",
+                                False,
+                            ],
+                            "status_code": 200,
+                        }
+                    }
+                ],
+                status_code=200,
+            )
+        return JSONResponse(
+            content=[
+                {
+                    "code11": {
+                        "status": [
+                            "Password valid dan kuat.",
+                            True,
+                        ],
+                        "status_code": 200,
+                    }
+                }
+            ],
+            status_code=200,
+        )
