@@ -1,6 +1,5 @@
 import { Form } from 'react-bootstrap'
 import { useState } from 'react'
-import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom';
 
 const FormLogin = () => {
