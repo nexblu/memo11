@@ -1,6 +1,7 @@
 from typing import Union
 from routers.register import router as regis
 from routers.login import router as login
+from routers.validate import router as validate
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -18,3 +19,4 @@ def read_item(item_id: int, q: Union[str, None] = None):
 
 app.include_router(regis)
 app.include_router(login)
+app.include_router(validate)

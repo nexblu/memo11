@@ -80,7 +80,7 @@ async def register(api_key: str, username: str):
                 content=[
                     {
                         "code11": {
-                            "status": "username must 1 - 15 char",
+                            "status": "username must alphanumeric",
                             "status_code": 400,
                         }
                     }
