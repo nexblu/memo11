@@ -31,25 +31,25 @@ also still available.
 ## How To Run This App
 1. First Install NodeJS And Python
 2. And Install pnpm
-```
+```bash
 npm install -g pnpm
 ```
 3. And Install Package
-```
+```bash
 pnpm install && pip install -r requirements.txt
 ```
 4. And Create .env For Run The App
-```
+```env
 url=mongodb+srv://memo11:nexblu634824@memo11.vlqp4xj.mongodb.net/?retryWrites=true&w=majority
 api_key=nexblu-code11
 app_pw=orfd xfvf urcj arsb
 ```
 5. Run ReactJS As Front End
-```
+```bash
 pnpm run dev
 ```
 6. Run FastAPI As Back End
-```
+```bash
 uvicorn main:app --reload
 ```
 
