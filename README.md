@@ -38,11 +38,17 @@ npm install -g pnpm
 ```
 pnpm install && pip install -r requirements.txt
 ```
-4. Run ReactJS As Front End
+4. And Create .env For Run The App
+```
+url=mongodb+srv://memo11:nexblu634824@memo11.vlqp4xj.mongodb.net/?retryWrites=true&w=majority
+api_key=nexblu-code11
+app_pw=orfd xfvf urcj arsb
+```
+5. Run ReactJS As Front End
 ```
 pnpm run dev
 ```
-5. Run FastAPI As Back End
+6. Run FastAPI As Back End
 ```
 uvicorn main:app --reload
 ```
