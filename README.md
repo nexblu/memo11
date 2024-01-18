@@ -27,3 +27,23 @@ that AI can recognize. Apart from that, our application is
 designed to have the ability to translate voice recordings into
 note form. Note-taking using the type and write method is
 also still available.
+
+## How To Run This App
+1. First Install NodeJS And Python
+2. And Install pnpm
+```
+npm install -g pnpm
+```
+3. And Install Package
+```
+pnpm install && pip install -r requirements.txt
+```
+4. Run ReactJS As Front End
+```
+pnpm run dev
+```
+5. Run FastAPI As Back End
+```
+uvicorn main:app --reload
+```
+

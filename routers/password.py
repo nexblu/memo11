@@ -14,12 +14,12 @@ router = APIRouter()
 @router.post("/api/v1/memo11/password")
 async def register(user: Password):
     if user.api_key == os.getenv("api_key"):
-        if data := await db.get("username", user.username, user.password):
+        if data := await db.get("password", user.username, user.password, user.email):
             return JSONResponse(
                 content=[
                     {
                         "code11": {
-                            "status": "success login",
+                            "status": "success reset",
                             "status_code": 200,
                         }
                     }
@@ -31,7 +31,7 @@ async def register(user: Password):
                 content=[
                     {
                         "code11": {
-                            "status": "failed login",
+                            "status": "failed reset password",
                             "status_code": 404,
                         }
                     }
