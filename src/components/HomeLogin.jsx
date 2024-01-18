@@ -1,4 +1,4 @@
-import { Button, Image } from 'react-bootstrap'
+import { Image } from 'react-bootstrap'
 import logo from '../../static/images/gbr.png';
 
 const HomeLogin = () => {
