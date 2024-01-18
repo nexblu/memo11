@@ -1,24 +1,39 @@
 import { Form } from 'react-bootstrap'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom';
 
 const FormLogin = () => {
     const [username, usernameUpdate] = useState('');
     const [password, passwordUpdate] = useState('');
 
+    const navigate = useNavigate();
+
     const proceedLogin = (e) => {
         e.preventDefault();
         console.log(username, password);
-        const url = `http://127.0.0.1:8000/api/v1/memo11/username_validate/nexblu-code11/${username}`;
-        fetch(url, {
-            method: 'GET',
+        const apiUrl = 'http://127.0.0.1:8000/api/v1/memo11/login';
+
+        const requestBody = {
+            username: 'nexblu',
+            password: '089508453973',
+            api_key: 'nexblu-code11'
+        };
+
+        fetch(apiUrl, {
+            method: 'POST',
             headers: {
                 'Accept': 'application/json',
+                'Content-Type': 'application/json',
             },
+            body: JSON.stringify(requestBody),
         })
             .then(response => response.json())
             .then(data => {
                 console.log('Response:', data);
+                if (data[0]['code11']['status_code'] === 200) {
+                    navigate('/register')
+                }
             })
             .catch(error => {
                 console.error('Error:', error);

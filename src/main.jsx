@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import PageNotFound from './pages/PageNotFound';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: <RegisterPage />
+  },
+  {
+    path: '*',
+    element: <PageNotFound />
   }
 ])
 
