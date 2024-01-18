@@ -1,8 +1,29 @@
-# React + Vite
+# Note App
+this is a note app created based on the hackfest competition
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Our Teams
+- Andana Farras Pramudita & Syarif Ramdani Lubis (Hacker)
+- Wicaksono Hanif Supriyanto (Hustler)
+- Kadek Agus Perdiana (Hipster)
 
-Currently, two official plugins are available:
+## App Technology
+- Flutter (Mobile App)
+- MongoDB (Database)
+- Google API (Supporting Features)
+- OCR (Scanner Text)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Product & Platform
+Our application will be designed as a notes application with
+several superior features to answer SDGS problems point 4
+and point 15. One of the main features we offer is digitizing
+notes using artificial intelligence (AI) in the form of Optical
+Character Recognition (OCR) which allows users to change
+everything text form into digital notes.
+
+With this technology, scanned notes in physical form can be
+converted into various note templates that we have provided.
+These digital notes are not limited to paper notes, but any text
+that AI can recognize. Apart from that, our application is
+designed to have the ability to translate voice recordings into
+note form. Note-taking using the type and write method is
+also still available.
