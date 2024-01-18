@@ -15,7 +15,7 @@ router = APIRouter()
 async def register(user: Register):
     if user.api_key == os.getenv("api_key"):
         try:
-            await db.insert(user.username, user.password)
+            await db.insert(user.username, user.email, user.password)
         except:
             return JSONResponse(
                 content=[

@@ -2,6 +2,7 @@ from typing import Union
 from routers.register import router as regis
 from routers.login import router as login
 from routers.validate import router as validate
+from routers.send_email import router as send_email
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -29,3 +30,4 @@ def read_item(item_id: int, q: Union[str, None] = None):
 app.include_router(regis)
 app.include_router(login)
 app.include_router(validate)
+app.include_router(send_email)

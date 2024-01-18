@@ -9,10 +9,11 @@ class User(DB):
         self.database = self.client["code11"]
         self.collection = self.database["memo11"]
 
-    async def insert(self, username, password):
+    async def insert(self, username, email, password):
         return self.collection.insert_one(
             {
                 "username": username,
+                "email": email,
                 "password": password,
                 "created_at": datetime.datetime.utcnow().timestamp(),
             }

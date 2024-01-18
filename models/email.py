@@ -1,8 +1,6 @@
 from pydantic import BaseModel
 
 
-class Register(BaseModel):
-    username: str
+class Email(BaseModel):
     email: str
-    password: str
     api_key: str
