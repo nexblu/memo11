@@ -9,7 +9,7 @@ const FormLogin = () => {
     const proceedLogin = (e) => {
         e.preventDefault();
         console.log(username, password);
-        const url = `http://127.0.0.1:8000/api/v1/memo11/username_validate/..../${username}`;
+        const url = `http://127.0.0.1:8000/api/v1/memo11/username_validate/nexblu-code11/${username}`;
         fetch(url, {
             method: 'GET',
             headers: {
