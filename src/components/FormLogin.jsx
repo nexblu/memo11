@@ -1,6 +1,10 @@
 import { Form } from 'react-bootstrap'
+import { useState } from 'react'
 
 const FormLogin = () => {
+    const [username, usernameUpdate] = useState('');
+    const [password, passwordUpdate] = useState('');
+
     return (
         <>
             <Form>
