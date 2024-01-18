@@ -32,7 +32,7 @@ const FormLogin = () => {
             .then(data => {
                 console.log('Response:', data);
                 if (data[0]['code11']['status_code'] === 200) {
-                    navigate('/register')
+                    navigate('/note-app')
                 }
             })
             .catch(error => {

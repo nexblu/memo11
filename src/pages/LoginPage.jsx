@@ -12,7 +12,7 @@ const LoginPage = () => {
                 <FormLogin />
                 <p>or</p>
                 <Button variant="warning" class="me-5 ms-5"><p className='text-light fw-bold'>Continue With Google Account</p></Button>{' '}
-                <p className='mt-2'>DONT HAVE ANT ACCOUNT? <a href="">SIGN UP</a></p>
+                <p className='mt-2'>DONT HAVE ANT ACCOUNT? <a href="/register">SIGN UP</a></p>
             </section>
         </>
     )
