@@ -31,6 +31,10 @@ class User(DB):
             return self.collection.find_one(
                 {"username": username, "password": password, "email": email}
             )
+        elif type == "password":
+            return self.collection.find_one(
+                {"username": username, "password": password, "email": email}
+            )
 
     async def update(self):
         pass
