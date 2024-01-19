@@ -1,20 +1,32 @@
+import { Container, Form, Image } from "react-bootstrap";
+import Login from '../../static/images/login.png'
 import Register from "../components/Register";
-import logo from '../../static/images/gbr.png';
-import { Image, Button } from 'react-bootstrap'
+import '../../static/css/style.css'
 
-const RegisterPage = () => {
+const LoginPage = () => {
     return (
         <>
-            <section className="login jumbotron text-center pt-3">
-                <h3 className='fw-bold'>Memo 11</h3>
-                <p className='fw-bold'>Login Into Your Memo</p>
-                <Image src={logo}></Image>
-                <Register />
-                <p>or</p>
-                <Button variant="warning" class="me-5 ms-5"><p className='text-light fw-bold'>Continue With Google Account</p></Button>{' '}
-            </section>
+            <Container>
+                <br>
+                </br>
+                <br>
+                </br>
+                <div className="judul">
+                    <h3 className="fw-bold">Memo11</h3>
+                    <br></br>
+                    <h5>Log in to your memo</h5>
+                </div>
+                <div className="gambar">
+                    <Image src={Login}></Image>
+                </div>
+                <div className="form text-center">
+                    <Register/>
+                </div>
+                <br />
+                <p className="text-center fw-bold">have an account please? <a href="/">log en</a></p>
+            </Container>
         </>
     )
 }
 
-export default RegisterPage;
+export default LoginPage;

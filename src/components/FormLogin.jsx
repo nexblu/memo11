@@ -45,7 +45,7 @@ const FormLogin = () => {
         <>
             <Form onSubmit={proceedLogin}>
                 <div className="mb-3 me-5 ms-5">
-                    <Form.Control type="text" placeholder="Email Or Phone Number" value={username} onChange={e => usernameUpdate(e.target.value)} />
+                    <Form.Control type="text" placeholder="Username" value={username} onChange={e => usernameUpdate(e.target.value)} />
                 </div>
                 <div className="mb-3 me-5 ms-5">
                     <Form.Control type="password" placeholder="Password" value={password} onChange={e => passwordUpdate(e.target.value)} />
