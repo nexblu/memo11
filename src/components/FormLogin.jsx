@@ -33,6 +33,7 @@ const FormLogin = () => {
                 if (data[0]['code11']['status_code'] === 200) {
                     console.log('masuk')
                     navigate('/note-app')
+                    alert(data[0]['code11']['status'])
                 }
             })
             .catch(error => {
